@@ -154,12 +154,12 @@ const AllMedicines = () => {
   return (
     <>
     <Header/>
-      <div className="p-5 bg-violet-200 min-h-screen text-white">
+      <div className="p-5 bg-violet-200 min-h-screen  text-white">
         
          
       <div className='flex justify-center items-center'>
         <div style={{width:'300px',}} >
-          <h2 className='font-bold text-end text-3xl text-black pt-3'>{store.name}</h2>
+          <h2 className='font-bold text-end text-3xl text-black pt-10'>{store.name}</h2>
           <p className='text-end ms-32 text-red-600'>- {store.place}</p>
         </div>
       </div>
@@ -171,7 +171,7 @@ const AllMedicines = () => {
         >
           +ADD MEDICINES
         </button>
-        <table className="table  rounded-lg shadow text-xs min-w-full border-collapse border border-gray-200 bg-white">
+        <table className="table  rounded-lg shadow text-xs sm:text-sm 2xl:text-lg min-w-full border-collapse border border-gray-200 bg-white">
           <thead>
             <tr>
               <th>#</th>

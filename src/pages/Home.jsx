@@ -50,7 +50,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="pt-14 pb-80">
+      <div className="pt-14 pb-80 min-h-screen">
         <h1 className="text-center pt-4 font-bold">Add Stores</h1>
         <div className="srchBack flex justify-center mt-5">
           <div className="m-5 srch flex justify-between mx-24 lg:mx-0 md:mx-0">

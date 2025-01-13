@@ -53,7 +53,7 @@ const Home = () => {
       <div className="pt-14 pb-80">
         <h1 className="text-center pt-4 font-bold">Add Stores</h1>
         <div className="srchBack flex justify-center mt-5">
-          <div className="m-5 srch flex justify-between">
+          <div className="m-5 srch flex justify-between mx-24 lg:mx-0 md:mx-0">
             <input
               onChange={(e) => setSearch(e.target.value)}
               type="text"

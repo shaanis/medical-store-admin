@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import { deleteMedStore, getStores } from "../services/allApi";
 import { Button, Modal } from "react-bootstrap";
 import Footer from "../components/Footer";
-import spinner from '../assets/Spinner-3.gif'
 
 const Home = () => {
   const [store, setStore] = useState([]);
   const [search, setSearch] = useState("");
   const [storeToDelete, setStoreToDelete] = useState(null);
-  const [loading, setLoading]= useState(true)
+  const [loading, setLoading] = useState(true);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -26,25 +25,21 @@ const Home = () => {
   }, []);
 
   const displayStore = async () => {
-    try{setLoading(true)
-    const result = await getStores();
-    // console.log(result.data);
-    setStore(result.data);
-  }catch(e){
-    console.log(e);
-    
-  }finally{
-    setLoading(false)
-  }
-    
+    try {
+      setLoading(true);
+      const result = await getStores();
+      // console.log(result.data);
+      setStore(result.data);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const searchStores = store?.filter((medicalStore) =>
     medicalStore.name.toLowerCase().includes(search.toLowerCase())
   );
-  
-  
-  
 
   const deleteStore = async (id) => {
     await deleteMedStore(id);
@@ -76,31 +71,29 @@ const Home = () => {
 
         <h3 className="mt-20 font-bold ms-20 ourStore">Our Medical Stores</h3>
         <div className="grid grid-cols-1 justify-items-center 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2  h-screen mt-11 ms-6">
-        {loading ? (
-  <div className="mt-24"
-  style={{
-    position: 'absolute', 
-    top: '50%', 
-    left: '50%',
-    transform: 'translate(-50%, -50%)', 
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-  }}
-  >
-    <img
-      className="bg-transparent"
-      style={{ width: '400px' }}
-      src="https://cdn.dribbble.com/users/3337757/screenshots/6825268/076_-loading_animated_dribbble_copy.gif"
-      alt="Loading Spinner"
-    />
+          {  loading ? (
+            <div
+              className="mt-24"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
+              <img
+                className="bg-transparent"
+                style={{ width: "400px" }}
+                src="https://cdn.dribbble.com/users/3337757/screenshots/6825268/076_-loading_animated_dribbble_copy.gif"
+                alt="Loading Spinner"
+              />
               <h1 className="text-2xl font-bold -mt-5">Loading...</h1>
-         </div>
-
-          )
-          
-          :searchStores?.length > 0 ? (
+            </div>
+          ) : searchStores?.length > 0 ? (
             searchStores?.map((item) => (
               <div key={item.id} className="bg-cardbg rounded m-5">
                 <Link
@@ -117,7 +110,9 @@ const Home = () => {
                   />
                 </Link>
                 <div className="flex justify-between mx-3">
-                  <h2 className="font-bold text-center mt-3">{item.name.toUpperCase()}</h2>
+                  <h2 className="font-bold text-center mt-3">
+                    {item.name.toUpperCase()}
+                  </h2>
                   <button onClick={() => handleShow(item)} className="mt-3">
                     <i className="fa-solid fa-trash text-red-600"></i>
                   </button>
@@ -131,7 +126,7 @@ const Home = () => {
       </div>
 
       {/* Modal for Deleting a Store */}
-     <>
+      <>
         <Modal
           show={show}
           onHide={handleClose}
@@ -164,8 +159,8 @@ const Home = () => {
             </div>
           </Modal.Body>
         </Modal>
-     </>
-      <Footer/>
+      </>
+      <Footer />
     </>
   );
 };

@@ -171,7 +171,7 @@ const AllMedicines = () => {
         >
           +ADD MEDICINES
         </button>
-        <table className="table  rounded-lg shadow text-xs sm:text-sm 2xl:text-lg min-w-full border-collapse border border-gray-200 bg-white">
+        <table className="table  rounded-lg shadow text-xs sm:text-sm 2xl:text-lg min-w-full border-collapse border border-gray-200 bg-white -ms-10 sm:-ms-0 md:ms-0 lg:ms-0 2xl:ms-0">
           <thead>
             <tr>
               <th>#</th>

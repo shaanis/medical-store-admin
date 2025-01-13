@@ -76,15 +76,27 @@ const Home = () => {
 
         <h3 className="mt-20 font-bold ms-20 ourStore">Our Medical Stores</h3>
         <div className="grid grid-cols-1 justify-items-center 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2  h-screen mt-11 ms-6">
-          { loading? (
-         <div className="h-72 flex justify-center items-center">
-  <img
-    className="bg-transparent"
-    style={{ width: '200px' }}
-    src={spinner}
-    alt="Loading Spinner"
-  />
-</div>
+        {loading ? (
+  <div className="mt-24"
+  style={{
+    position: 'absolute', 
+    top: '50%', 
+    left: '50%',
+    transform: 'translate(-50%, -50%)', 
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+  }}
+  >
+    <img
+      className="bg-transparent"
+      style={{ width: '400px' }}
+      src="https://cdn.dribbble.com/users/3337757/screenshots/6825268/076_-loading_animated_dribbble_copy.gif"
+      alt="Loading Spinner"
+    />
+              <h1 className="text-2xl font-bold -mt-5">Loading...</h1>
+         </div>
 
           )
           

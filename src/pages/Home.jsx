@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 import { deleteMedStore, getStores } from "../services/allApi";
 import { Button, Modal } from "react-bootstrap";
 import Footer from "../components/Footer";
+import spinner from '../assets/Spinner-3.gif'
 
 const Home = () => {
   const [store, setStore] = useState([]);
   const [search, setSearch] = useState("");
   const [storeToDelete, setStoreToDelete] = useState(null);
+  const [loading, setLoading]= useState(true)
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -24,9 +26,17 @@ const Home = () => {
   }, []);
 
   const displayStore = async () => {
+    try{setLoading(true)
     const result = await getStores();
     // console.log(result.data);
     setStore(result.data);
+  }catch(e){
+    console.log(e);
+    
+  }finally{
+    setLoading(false)
+  }
+    
   };
 
   const searchStores = store?.filter((medicalStore) =>
@@ -45,7 +55,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className="pt-14">
+      <div className="pt-14 pb-80">
         <h1 className="text-center pt-4 font-bold">Add Stores</h1>
         <div className="srchBack flex justify-center mt-5">
           <div className="m-5 srch flex justify-between">
@@ -65,8 +75,20 @@ const Home = () => {
         </div>
 
         <h3 className="mt-20 font-bold ms-20 ourStore">Our Medical Stores</h3>
-        <div className="grid grid-cols-3  h-screen mt-11 ms-6">
-          {searchStores?.length > 0 ? (
+        <div className="grid grid-cols-1 justify-items-center 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2  h-screen mt-11 ms-6">
+          { loading? (
+         <div className="h-72 flex justify-center items-center">
+  <img
+    className="bg-transparent"
+    style={{ width: '200px' }}
+    src={spinner}
+    alt="Loading Spinner"
+  />
+</div>
+
+          )
+          
+          :searchStores?.length > 0 ? (
             searchStores?.map((item) => (
               <div key={item.id} className="bg-cardbg rounded m-5">
                 <Link
@@ -83,7 +105,7 @@ const Home = () => {
                   />
                 </Link>
                 <div className="flex justify-between mx-3">
-                  <h2 className="font-bold text-center mt-3">{item.name}</h2>
+                  <h2 className="font-bold text-center mt-3">{item.name.toUpperCase()}</h2>
                   <button onClick={() => handleShow(item)} className="mt-3">
                     <i className="fa-solid fa-trash text-red-600"></i>
                   </button>

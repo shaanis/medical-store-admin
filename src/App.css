@@ -49,11 +49,39 @@
   justify-content: center; /* Centers items horizontally */
   align-items: center; /* Centers items vertically if needed */
 }
+.addMedInput{
+  all: unset;
+  width: 350px;
+  height: 38px;
+  border-radius:8px ;
+  padding-left: 7px;
+  background-color: rgba(208, 105, 105, 1) ;
+}
+.medAddbtn{
+  width: 300px;
+  height: 33px;
+}
 
 @media (max-width: 538px) {
    .input{
     width: 300px;
    }
+   .addMedInput{
+    width: 250px;
+   }
+   .strName{
+    margin-left: -100px;
+   }
+   .place{
+    margin-left: -203px;
+  }
+  .headingAddMed{
+    margin-left: -179px;
+  }
+  .medAddbtn{
+    width: 250px;
+    height: 30px;
+  }
 }
 
 @media (min-width: 768px) {

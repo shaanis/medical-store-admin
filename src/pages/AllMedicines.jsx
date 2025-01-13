@@ -209,6 +209,7 @@ const AllMedicines = () => {
       </div>
 
       <Modal
+      centered
         show={show}
         onHide={handleClose}
         backdrop="static"
@@ -270,6 +271,7 @@ const AllMedicines = () => {
     
       {/* update */}
       <Modal
+      centered
         show={upshow}
         onHide={handleUpdateClose}
         backdrop="static"

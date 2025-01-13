@@ -128,6 +128,7 @@ const Home = () => {
       {/* Modal for Deleting a Store */}
       <>
         <Modal
+        centered
           show={show}
           onHide={handleClose}
           backdrop="static"

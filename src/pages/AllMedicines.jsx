@@ -176,9 +176,10 @@ const AllMedicines = () => {
             <tr>
               <th>#</th>
               <th>Medicine Name</th>
-              <th>Dose</th>
+              
               <th>Description</th>
               <th>Quantity</th>
+              <th>Price</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -188,9 +189,10 @@ const AllMedicines = () => {
                 <tr key={med.id}>
                 <td>{index + 1}</td>
                 <td>{med.name}</td>
-                <td>{med.dose}</td>
+                
                 <td>{med.description}</td>
                 <td>{med.quantity}</td>
+                <td>{med.dose}</td>
                 <td className="flex gap-5">
                   <button onClick={()=>handleUpdateShow(med.id)} >
                     <i className="fa-solid fa-pen text-success"></i>
@@ -228,14 +230,7 @@ const AllMedicines = () => {
               type="text"
               placeholder="Enter Medicine Name"
             />
-            <input
-              name="dose"
-              value={medicine.dose}
-              onChange={(e) => setMedicine({ ...medicine, dose: e.target.value })}
-              className="p-3 border rounded shadow"
-              type="text"
-              placeholder="Enter Medicine Dose"
-            />
+           
             <input
               name="description"
               value={medicine.description}
@@ -255,6 +250,14 @@ const AllMedicines = () => {
               className="p-3 border rounded shadow"
               type="number"
               placeholder="Enter Medicine Quantity"
+            />
+             <input
+              name="dose"
+              value={medicine.dose}
+              onChange={(e) => setMedicine({ ...medicine, dose: e.target.value })}
+              className="p-3 border rounded shadow"
+              type="text"
+              placeholder="Enter Medicine Price"
             />
           </form>
         </Modal.Body>
@@ -278,7 +281,7 @@ const AllMedicines = () => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Add Medicines</Modal.Title>
+          <Modal.Title>Update Medicines</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form className="flex flex-col gap-3">
@@ -290,14 +293,7 @@ const AllMedicines = () => {
               type="text"
               placeholder="Enter Medicine Name"
             />
-            <input
-              name="dose"
-              value={medicineUpdate.dose}
-              onChange={(e) => setMedicineUpdate({ ...medicineUpdate, dose: e.target.value })}
-              className="p-3 border rounded shadow"
-              type="text"
-              placeholder="Enter Medicine Dose"
-            />
+            
             <input
               name="description"
               value={medicineUpdate.description}
@@ -312,11 +308,19 @@ const AllMedicines = () => {
               name="quantity"
               value={medicineUpdate.quantity}
               onChange={(e) =>
-                setMedicine({ ...medicineUpdate, quantity: e.target.value })
+                setMedicineUpdate({ ...medicineUpdate, quantity: e.target.value })
               }
               className="p-3 border rounded shadow"
-              type="number"
+              type="text"
               placeholder="Enter Medicine Quantity"
+            />
+            <input
+              name="dose"
+              value={medicineUpdate.dose}
+              onChange={(e) => setMedicineUpdate({ ...medicineUpdate, dose: e.target.value })}
+              className="p-3 border rounded shadow"
+              type="text"
+              placeholder="Enter Medicine Price"
             />
           </form>
         </Modal.Body>

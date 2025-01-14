@@ -10,7 +10,7 @@ const Header = () => {
           {/* Brand Logo */}
           <Navbar.Brand to={'/'} className="text-white fw-bold">
             <h5 className="font-bold">
-              <i className="fa-solid fa-heart-pulse text-red-600 text-xl"></i>
+              <i className="fa-solid fa-heart-pulse text-red-600 text-xl 2xl:-ms-40"></i>
               &nbsp; HealthCart
             </h5>
           </Navbar.Brand>

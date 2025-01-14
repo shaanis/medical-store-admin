@@ -159,7 +159,7 @@ const AllMedicines = () => {
          
       <div className='flex justify-center items-center'>
         <div style={{width:'300px',}} >
-          <h2 className='font-bold text-end text-3xl text-black pt-10'>{store.name}</h2>
+          <h2 className='font-bold text-end text-3xl text-black pt-3'>{store.name}</h2>
           <p className='text-end ms-32 text-red-600'>- {store.place}</p>
         </div>
       </div>

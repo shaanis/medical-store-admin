@@ -179,7 +179,7 @@ const AllMedicines = () => {
               
               <th>Description</th>
               <th>Quantity</th>
-              <th>Price</th>
+              <th>Price /<sub>stripe</sub></th>
               <th>Actions</th>
             </tr>
           </thead>

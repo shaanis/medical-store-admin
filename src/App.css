@@ -42,6 +42,10 @@
   max-width: 420px; /* Set desired width */
   margin: auto; /* Center the modal horizontally */
 }
+.custom-modal1 {
+  max-width: 320px; /* Set desired width */
+  margin: auto; /* Center the modal horizontally */
+}
 .cardBlog {
   display: grid;
   grid-template-columns: 1fr;

@@ -192,7 +192,7 @@ const AllMedicines = () => {
                 <td>{med.description}</td>
                 <td>{med.quantity}</td>
                 <td className="flex gap-5">
-                  <button onClick={()=>handleUpdateShow(med.id)} className="bg-white">
+                  <button onClick={()=>handleUpdateShow(med.id)} >
                     <i className="fa-solid fa-pen text-success"></i>
                   </button>
                   <button>

@@ -27,6 +27,12 @@ export const putMedicines=async(id,updatedStore)=>{
 export const displayMedicinesApi=async(id)=>{
     return await commonApi('GET',`${serverurl}/medical-stores/${id}`,"")
 }
+// show all medicines
+export const showALLMedicinesApi=async()=>{
+    return await commonApi('GET',`${serverurl}/medical-stores`,"")
+}
+
+
 
 
 export const getStoresInAllMedApi=async(id)=>{

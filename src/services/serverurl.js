@@ -1,3 +1,3 @@
- const serverurl ="https://medical-server-vl4l.onrender.com"
+ const serverurl ="https://medical-server-bnao.onrender.com"
 
  export default serverurl
